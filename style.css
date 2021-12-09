@@ -3,6 +3,7 @@
     width: 40px;
     height: 40px;
     display: inline-block;
+    margin-bottom: 10px;
 }
 
 .pixel {
@@ -11,4 +12,18 @@
     border: 1px solid black;
     width: 40px;
     height: 40px;
+    margin: 2px;
+}
+
+#board-size, #generate-board, #clear-board {
+    margin-bottom: 10px;
+}
+
+body {
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
 }
