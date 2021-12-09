@@ -1,6 +1,7 @@
 window.onload = function () {
     let paletteFirstColor = document.querySelector('.color');
     paletteFirstColor.classList.add('selected');
+
 }
 
 const blackButton = document.getElementById('black');
@@ -27,27 +28,56 @@ pinkButton.addEventListener('click', changeClass);
 greyButton.addEventListener('click', changeClass);
 
 
-let firstLine = document.querySelector('#first-line');
-let secondLine = document.querySelector('#second-line');
-let thirdLine = document.querySelector('#third-line');
-let fourthLine = document.querySelector('#fourth-line');
-let fifthLine = document.querySelector('#fifth-line');
+let pixelBoard = document.querySelector('#pixel-board');
 
 function colorePixel (event){
     let corSelecionada = document.querySelector('.selected');    
     event.target.style.backgroundColor = corSelecionada.style.backgroundColor;
 }
 
-firstLine.addEventListener('click', colorePixel);
-secondLine.addEventListener('click', colorePixel);
-thirdLine.addEventListener('click', colorePixel);
-fourthLine.addEventListener('click', colorePixel);
-fifthLine.addEventListener('click', colorePixel);
+pixelBoard.addEventListener('click', colorePixel);
 
 let clearButton = document.querySelector('#clear-board');
+
 clearButton.addEventListener('click', function(){
     let allPixels = document.getElementsByClassName('pixel');
     for (let i=0; i<allPixels.length; i+=1){
         allPixels[i].style.backgroundColor='white';
     }
 })
+
+let boardGenerator = document.querySelector('#generate-board');
+let inputSize = document.querySelector('#board-size')
+
+function generateBoard () {
+    if (inputSize.value==''){
+        window.alert('Board inválido!');
+    } else {
+        removeBoard();
+        
+        let boardSize = inputSize.value;
+        
+        for (let countLines = 0; countLines<boardSize; countLines+=1){
+            let newLine = document.createElement('div');
+            newLine.className='lines';
+            pixelBoard.appendChild(newLine);
+        }
+        let allLines = document.querySelectorAll('.lines');
+        for (let runLines = 0; runLines<allLines.length; runLines+=1){
+            for (let countPixels = 0; countPixels<boardSize; countPixels+=1){
+                let newPixel = document.createElement('div');
+                newPixel.className='pixel';
+                allLines[runLines].appendChild(newPixel);
+            }
+        }
+    } 
+}
+
+function removeBoard() {
+    for (let indice=pixelBoard.childNodes.length-1; indice>=0; indice-=1){
+        let filhoAtual = pixelBoard.childNodes[indice];
+        filhoAtual.remove();
+    }
+}
+
+boardGenerator.addEventListener('click', generateBoard);
