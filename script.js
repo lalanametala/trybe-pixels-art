@@ -56,6 +56,12 @@ function generateBoard () {
         removeBoard();
         
         let boardSize = inputSize.value;
+
+        if (boardSize<5){
+            boardSize=5;
+        } else if (boardSize>50){
+            boardSize=50;
+        }
         
         for (let countLines = 0; countLines<boardSize; countLines+=1){
             let newLine = document.createElement('div');
