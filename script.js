@@ -11,10 +11,10 @@ const fourthButton = document.getElementById('fourth-button');
 
 firstButton.style.backgroundColor = 'black';
 
-//Exercício 12 - Bônus - Para a geração de cores aleatórias, foi feita uma busca no site dev.to. A melhor maneira para tal, conforme sugerido, é converter o numero de cores existentes menos um (16777215), multiplicado por um numero aleatorio entre 0 e 1, inteiro, para uma string hexadecimal, que representará uma cor. O número teto 16777214 foi escolhido pois o logo acima dele retorna #ffffff (branco, ou seja, cor da ponta, que não pode ser atribuída aos quadrados da paleta)
+//Exercício 12 - Bônus - Para a geração de cores aleatórias, foi feita uma busca no site dev.to. A melhor maneira para tal, conforme sugerido, é converter o numero de cores existentes menos um (16777215), multiplicado por um numero aleatorio entre 0 e 1, inteiro, para uma string hexadecimal, que representará uma cor. O número teto 16777215 foi escolhido pois ele retorna #ffffff (branco, ou seja, cor da ponta)
 
 function generateColor() {
-    let randomColor = '#'+Math.floor(Math.random()*16777214).toString(16);
+    let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
     return randomColor;
 }
 
