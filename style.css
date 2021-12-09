@@ -21,3 +21,8 @@
     background-color: grey;
     display: inline-block;
 }
+
+.pixel {
+    background-color: white;
+    display: inline-block;
+}
