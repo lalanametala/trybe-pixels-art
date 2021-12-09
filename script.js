@@ -41,6 +41,10 @@ let pixelBoard = document.querySelector('#pixel-board');
 function colorePixel (event){
     let corSelecionada = document.querySelector('.selected');    
     event.target.style.backgroundColor = corSelecionada.style.backgroundColor;
+    let lineDivs = document.querySelectorAll('.lines');
+    for (let j=0; j<lineDivs.length; j+=1){
+        lineDivs[j].style.backgroundColor='white';
+    }
 }
 
 pixelBoard.addEventListener('click', colorePixel);
