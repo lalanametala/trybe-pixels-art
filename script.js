@@ -4,15 +4,23 @@ window.onload = function () {
 
 }
 
-const blackButton = document.getElementById('black');
-const greenButton = document.getElementById('green');
-const pinkButton = document.getElementById('pink');
-const greyButton = document.getElementById('grey');
+const firstButton = document.getElementById('first-button');
+const secondButton = document.getElementById('second-button');
+const thirdButton = document.getElementById('third-button');
+const fourthButton = document.getElementById('fourth-button');
 
-blackButton.style.backgroundColor = 'black';
-greenButton.style.backgroundColor = 'green';
-pinkButton.style.backgroundColor = 'pink';
-greyButton.style.backgroundColor = 'grey';
+firstButton.style.backgroundColor = 'black';
+
+//Exercício 12 - Bônus - Para a geração de cores aleatórias, foi feita uma busca no site dev.to. A melhor maneira para tal, conforme sugerido, é converter o numero de cores existentes menos um (16777215), multiplicado por um numero aleatorio entre 0 e 1, inteiro, para uma string hexadecimal, que representará uma cor. O número teto 16777214 foi escolhido pois o logo acima dele retorna #ffffff (branco, ou seja, cor da ponta, que não pode ser atribuída aos quadrados da paleta)
+
+function generateColor() {
+    let randomColor = '#'+Math.floor(Math.random()*16777214).toString(16);
+    return randomColor;
+}
+
+secondButton.style.backgroundColor = generateColor();
+thirdButton.style.backgroundColor = generateColor();
+fourthButton.style.backgroundColor = generateColor();
 
 function changeClass (event) {
     const currentSelectedElement = document.querySelector('.selected');
@@ -22,10 +30,10 @@ function changeClass (event) {
     }
 }
 
-blackButton.addEventListener('click', changeClass);
-greenButton.addEventListener('click', changeClass);
-pinkButton.addEventListener('click', changeClass);
-greyButton.addEventListener('click', changeClass);
+firstButton.addEventListener('click', changeClass);
+secondButton.addEventListener('click', changeClass);
+thirdButton.addEventListener('click', changeClass);
+fourthButton.addEventListener('click', changeClass);
 
 
 let pixelBoard = document.querySelector('#pixel-board');

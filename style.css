@@ -2,25 +2,6 @@
     border: 1px solid black;
     width: 40px;
     height: 40px;
-}
-
-#black {
-    background-color: black;
-    display: inline-block;
-}
-
-#green {
-    background-color: green;
-    display: inline-block;
-}
-
-#pink {
-    background-color: pink;
-    display: inline-block;
-}
-
-#grey {
-    background-color: grey;
     display: inline-block;
 }
 
