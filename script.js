@@ -8,6 +8,10 @@ const greenButton = document.getElementById('green');
 const pinkButton = document.getElementById('pink');
 const greyButton = document.getElementById('grey');
 
+blackButton.style.backgroundColor = 'black';
+greenButton.style.backgroundColor = 'green';
+pinkButton.style.backgroundColor = 'pink';
+greyButton.style.backgroundColor = 'grey';
 
 function changeClass (event) {
     const currentSelectedElement = document.querySelector('.selected');
@@ -22,10 +26,6 @@ greenButton.addEventListener('click', changeClass);
 pinkButton.addEventListener('click', changeClass);
 greyButton.addEventListener('click', changeClass);
 
-blackButton.style.backgroundColor = 'black';
-greenButton.style.backgroundColor = 'green';
-pinkButton.style.backgroundColor = 'pink';
-greyButton.style.backgroundColor = 'grey';
 
 let firstLine = document.querySelector('#first-line');
 let secondLine = document.querySelector('#second-line');
@@ -43,3 +43,11 @@ secondLine.addEventListener('click', colorePixel);
 thirdLine.addEventListener('click', colorePixel);
 fourthLine.addEventListener('click', colorePixel);
 fifthLine.addEventListener('click', colorePixel);
+
+let clearButton = document.querySelector('#clear-board');
+clearButton.addEventListener('click', function(){
+    let allPixels = document.getElementsByClassName('pixel');
+    for (let i=0; i<allPixels.length; i+=1){
+        allPixels[i].style.backgroundColor='white';
+    }
+})
