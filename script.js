@@ -43,7 +43,7 @@ function colorePixel (event){
     event.target.style.backgroundColor = corSelecionada.style.backgroundColor;
     let lineDivs = document.querySelectorAll('.lines');
     for (let j=0; j<lineDivs.length; j+=1){
-        lineDivs[j].style.backgroundColor='white';
+        lineDivs[j].style.backgroundColor='whitesmoke';
     }
 }
 
